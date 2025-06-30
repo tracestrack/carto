@@ -11,7 +11,7 @@ var existsSync = require('fs').existsSync || require('path').existsSync
 var yargs = require('yargs')(process.argv.slice(2))
             .usage("Usage: $0 <source MML file>")
             .options('h', {alias:'help', describe:'Display this help message'})
-            .options('v', {alias:'version', boolean:true, describe:'Display version information'})
+            .options('v', {boolean:true, describe:'Display version information'})
             .options('b', {alias:'benchmark', boolean:true, describe:'Outputs total compile time'})
             .options('l', {alias:'localize', boolean:true, default:false, describe:'Use millstone to localize resources when loading an MML'})
             .options('n', {alias:'nosymlink', boolean:true, describe:'Use absolute paths instead of symlinking files'})
@@ -28,7 +28,7 @@ if (options.help) {
     process.exit(0);
 }
 
-if (options.version) {
+if (options.v) {
     console.error("carto " + carto.version.join('.') + " (Carto map stylesheet compiler)");
     process.exit(0);
 }
