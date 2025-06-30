@@ -1,3 +1,10 @@
 *.swp
 npm_modules/
 test/
+.travis.yml
+appveyor.yml
+.eslintrc.yml
+.claude/
+example/
+coverage/
+.nyc_output/

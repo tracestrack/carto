@@ -1,5 +1,36 @@
 # Changelog
 
+## 2.0.0
+
+### Breaking Changes
+* **BREAKING**: Minimum Node.js version is now 16.0.0 (was 8.0.0)
+* **BREAKING**: Updated js-yaml from ~3.14.0 to ~4.1.0
+  - `yaml.safeLoad` is now `yaml.load` (automatically migrated)
+* **BREAKING**: Updated yargs from ~15.4.1 to ~18.0.0
+  - CLI initialization updated for new yargs API
+* **BREAKING**: Updated chroma-js from ~1.3.5 to ~3.1.2
+  - May affect color function behavior in some edge cases
+
+### Major Dependency Updates
+* chroma-js: ~1.3.5 → ~3.1.2
+* hsluv: ~0.0.1 → ~1.0.1
+* js-yaml: ~3.14.0 → ~4.1.0
+* semver: ~5.6.0 → ~7.7.2
+* yargs: ~15.4.1 → ~18.0.0
+
+### Development Dependencies
+* Replaced deprecated `istanbul` with `c8` for code coverage
+* Updated mocha: ~7.2.0 → ~11.7.1
+* Updated mocha-eslint: ^4.0.0 → ^7.0.0
+* Updated sax: ~1.2.1 → ~1.4.1
+* Updated coveralls: ~3.0.0 → ~3.1.1
+
+### Other Changes
+* Fixed deprecated `assert.fail()` usage in tests
+* Updated ESLint configuration for ES2015 compatibility
+* Updated test scripts to use c8 instead of istanbul
+* 223 out of 229 tests passing (6 tests failing due to CLI and color function changes)
+
 ## 1.2.0
 
 * Update dependencies
