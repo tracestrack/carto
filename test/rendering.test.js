@@ -89,10 +89,10 @@ helper.files('rendering', 'mml', function(file) {
             else {
                 if (_.has(output, 'msg') && _.isArray(output.msg) &&
                     output.msg.length > 0) {
-                    assert.fail('','', util.getMessagesToPrint(output.msg));
+                    assert.fail(util.getMessagesToPrint(output.msg));
                 }
                 else {
-                    assert.fail('', '', 'Output was nil but no msg property found.');
+                    assert.fail('Output was nil but no msg property found.');
                 }
                 done();
             }

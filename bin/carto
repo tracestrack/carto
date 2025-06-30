@@ -3,13 +3,12 @@
 var path = require('path'),
     fs = require('fs'),
     carto = require('../lib/carto'),
-    url = require('url'),
     _ = require('lodash'),
     util = require('../lib/carto/util');
 
 var existsSync = require('fs').existsSync || require('path').existsSync
 
-var yargs = require('yargs')
+var yargs = require('yargs')(process.argv.slice(2))
             .usage("Usage: $0 <source MML file>")
             .options('h', {alias:'help', describe:'Display this help message'})
             .options('v', {alias:'version', boolean:true, describe:'Display version information'})
@@ -45,7 +44,7 @@ if (!input) {
 }
 
 if (options.benchmark) {
-    var start = +new Date;
+    var start = +new Date();
 }
 
 var ext = path.extname(input);
@@ -62,7 +61,7 @@ if (!existsSync(input)) {
 
 try {
     var data = fs.readFileSync(input, 'utf-8');
-} catch(err) {
+} catch (err) {
     console.error("carto: " + err.message.replace(/^[A-Z]+, /, ''));
     process.exit(1);
 }
@@ -144,7 +143,7 @@ function compile(err, data) {
             }
         }
     } else {
-        var duration = (+new Date) - start;
+        var duration = (+new Date()) - start;
         console.log('TOTAL: ' + (duration) + 'ms');
     }
-};
+}

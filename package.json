@@ -30,27 +30,27 @@
   "man": "./man/carto.1",
   "main": "./lib/carto/index",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {
-    "chroma-js": "~1.3.5",
-    "hsluv": "~0.0.1",
-    "js-yaml": "~3.14.0",
-    "lodash": "~4.17.10",
+    "chroma-js": "~3.1.2",
+    "hsluv": "~1.0.1",
+    "js-yaml": "~4.1.0",
+    "lodash": "~4.17.21",
     "mapnik-reference": "~8.10.0",
-    "semver": "~5.6.0",
-    "yargs": "~15.4.1"
+    "semver": "~7.7.2",
+    "yargs": "~18.0.0"
   },
   "devDependencies": {
-    "coveralls": "~3.0.0",
-    "istanbul": "~0.4.5",
-    "mocha": "~7.2.0",
-    "mocha-eslint": "^4.0.0",
-    "sax": "~1.2.1"
+    "coveralls": "~3.1.1",
+    "c8": "~10.1.2",
+    "mocha": "~11.7.1",
+    "mocha-eslint": "^7.0.0",
+    "sax": "~1.4.1"
   },
   "scripts": {
     "pretest": "npm install && mocha -R spec --timeout 50000 -f jslint",
     "test": "mocha -R spec --timeout 50000 -i -f jslint",
-    "coverage": "istanbul cover ./node_modules/.bin/_mocha -- -R spec --timeout 50000 -i -f jslint && coveralls < ./coverage/lcov.info"
+    "coverage": "c8 --reporter=lcov mocha -R spec --timeout 50000 -i -f jslint && coveralls < ./coverage/lcov.info"
   }
 }

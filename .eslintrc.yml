@@ -1,6 +1,6 @@
 parserOptions:
-  ecmaVersion: 5
-  sourceType: module
+  ecmaVersion: 2015
+  sourceType: script
 env:
   browser: true
   node: true
@@ -117,7 +117,7 @@ rules:
   no-path-concat: 2
   no-plusplus: 0
   no-process-env: 2
-  no-process-exit: 2
+  no-process-exit: 0
   no-proto: 2
   no-restricted-imports: 2
   no-restricted-modules: 2
@@ -193,3 +193,4 @@ rules:
   yield-star-spacing: 2
   yoda: 0
   no-useless-escape: 0
+  no-misleading-character-class: 0

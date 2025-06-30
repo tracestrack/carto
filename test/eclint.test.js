@@ -2,7 +2,7 @@ var lint = require('mocha-eslint');
 
 describe('jslint', function() {
     var paths = [
-      'bin',
+      'bin/carto',
       'lib',
       'test'
     ];
