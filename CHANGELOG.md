@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.1
+
+* Updated package metadata
+  - Description now indicates Tracestrack maintenance
+  - Repository URLs updated to point to tracestrack/carto
+  - No code changes
+
 ## 2.0.0
 
 ### Breaking Changes
