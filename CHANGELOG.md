@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.2
+
+* **CRITICAL FIX**: Fixed hsluv v1.0.1 API compatibility
+  - Updated color conversion functions to use property-based hsluv API
+  - Fixed `TypeError: hsluv.rgbToHsluv is not a function` error
+  - Updated both lib/carto/tree/color.js and lib/carto/functions.js
+  - Color functions now work correctly with perceptual color mixing
+
 ## 2.0.1
 
 * Updated package metadata

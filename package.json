@@ -1,6 +1,6 @@
 {
   "name": "@tracestrack/carto",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Mapnik Stylesheet Compiler (maintained by Tracestrack)",
   "url": "https://github.com/tracestrack/carto",
   "repository": {
