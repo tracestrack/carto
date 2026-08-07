@@ -1,5 +1,57 @@
 # Changelog
 
+## 2.1.0
+
+### Node.js Requirement
+* `engines.node` corrected from `>=16.0.0` to `>=20.19.0`
+
+  This documents a requirement that already existed rather than
+  introducing a new one: yargs 18, shipped in 2.0.3, requires
+  `^20.19.0 || ^22.12.0 || >=23`. Installs on Node 16 or 18 were
+  already broken; they now fail at install time with a clear message
+  instead of at runtime.
+
+### Security
+* js-yaml: ~4.1.0 → ~4.3.1
+  - Fixes three high-severity denial-of-service advisories covering
+    quadratic CPU consumption in merge-key (`<<`) handling and in
+    `!!omap` resolution
+* lodash: ~4.17.21 → ~4.18.1
+  - Fixes code injection via `_.template` imports key names and
+    prototype pollution via array path bypass in `_.unset` / `_.omit`
+
+Production dependencies now report zero known vulnerabilities.
+
+### Dependency Updates
+* chroma-js: ~3.1.2 → ~3.2.0
+* hsluv: ~1.0.1 → ~1.0.2
+* semver: ~7.7.2 → ~7.8.5
+* yargs: ~18.0.0 → ~18.1.0
+
+### Development
+* Removed coveralls, along with the coverage-upload step in the
+  `coverage` script. The package was deprecated and pulled in the
+  abandoned `request@2.88.2` chain, which accounted for six
+  advisories including two critical, none with upstream fixes.
+  `npm run coverage` still emits `coverage/lcov.info` and now also
+  prints a text summary; uploading belongs in CI.
+* c8: ~10.1.2 → ~12.0.0
+* mocha: ~11.7.1 → ~11.8.0
+* sax: ~1.4.1 → ~1.6.1
+* Excluded `test-local/` and packed `*.tgz` files from the published
+  package. Both were being shipped to npm, including a stale copy of
+  the 2.0.2 tarball; package size drops from 307.7 kB to 151.7 kB.
+
+## 2.0.4
+
+* Fixed a yargs deprecation warning by removing the `version` alias
+  on the `-v` flag in `bin/carto`, which collided with the option
+  yargs 18 registers internally
+
+## 2.0.3
+
+* Version bump only; no source changes relative to 2.0.2
+
 ## 2.0.2
 
 * **CRITICAL FIX**: Fixed hsluv v1.0.1 API compatibility
