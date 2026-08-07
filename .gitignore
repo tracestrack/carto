@@ -1,5 +1,7 @@
 **/node_modules
 coverage/
+*.tgz
+test-local/
 .DS_Store
 test/rendering/layers/
 test/rendering/cache/

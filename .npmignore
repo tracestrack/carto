@@ -8,3 +8,6 @@ appveyor.yml
 example/
 coverage/
 .nyc_output/
+*.tgz
+test-local/
+test-npx/
